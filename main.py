@@ -1,9 +1,19 @@
 import pygame
 from pygame.locals import *
 
+class snake:
+    def __init__(self):
+        self.block = pygame.image.load("Resource/block.jpg").convert()
+        self.block_x=100
+        self.block_y=100
+    
+    
 class Game:
     def __init__(self):
-        pass
+        pygame.init()
+        self.surface = pygame.display.set_mode((1000,500))
+        self.surface.fill((255,255,255))
+        
     
     def run(self):
         pass
@@ -14,17 +24,12 @@ def draw_block():
     pygame.display.flip()
 
 if __name__ == "__main__":
+    game= Game()
+    game.run
     
     
     
-    pygame.init()
     
-    surface = pygame.display.set_mode((1000,500))
-    surface.fill((255,255,255))
-    
-    block = pygame.image.load("Resource/block.jpg").convert()
-    block_x=100
-    block_y=100
     surface.blit(block,(block_x,block_y))
     
     pygame.display.flip()
