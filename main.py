@@ -2,17 +2,12 @@ import pygame
 from pygame.locals import *
 
 class Snake:
-    def __init__(self,parent_screen):
-        self.parent_screen = parent_screen
+    def __init__(self, surface):
+        self.parent_screen = surface
         self.block = pygame.image.load("Resource/block.jpg").convert()
         self.x=100
         self.y=100
     
-    def draw(self):
-        self.parent_screen((255,255,255))
-        self.parent_screen.blit(self.block,(self.x,self.y))
-        pygame.display.flip()
-        
     def move_left(self):
         self.x -= 10
         self.draw()
@@ -29,11 +24,15 @@ class Snake:
         self.y += 10
         self.draw()
         
+    def draw(self):
+        self.parent_screen.fill((255,255,255))
+        self.parent_screen.blit(self.block,(self.x,self.y))
+        pygame.display.flip()
+  
 class Game:
     def __init__(self):
         pygame.init()
         self.surface = pygame.display.set_mode((1000,500))
-        self.surface.fill((255,255,255))
         self.snake = Snake(self.surface)
         self.snake.draw()
     
@@ -62,10 +61,9 @@ class Game:
                 elif event.type == QUIT:
                     running = False
 
-
 if __name__ == "__main__":
-    game= Game()
-    game.run
+    game = Game()
+    game.run()
     
     
     
