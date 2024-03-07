@@ -72,7 +72,7 @@ class Game:
                     running = False
                     
             self.snake.walk()  
-            time.sleep(0.3)         
+            time.sleep(0.2)         
                     
                     
                     
