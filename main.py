@@ -39,13 +39,13 @@ class Snake:
             self.y[i] = self.y[i-1]
 
         if self.direction == 'left':
-            self.x[0] -= SIZE
+            self.x[0] -= Size
         if self.direction == 'right':
-            self.x[0] += SIZE
+            self.x[0] += Size
         if self.direction == 'up':
-            self.y[0] -= SIZE
+            self.y[0] -= Size
         if self.direction == 'down':
-            self.y[0] += SIZE
+            self.y[0] += Size
             
         self.draw()
 
