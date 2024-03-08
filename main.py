@@ -38,7 +38,7 @@ class Snake:
         self.direction ="down"
         
     def draw(self):
-        self.parent_screen.fill((255,255,255))
+        self.parent_screen.fill((124, 252, 0))
         for i in range (self.length):
             self.parent_screen.blit(self.block,(self.x[i],self.y[i]))
         pygame.display.flip()
@@ -97,7 +97,8 @@ class Game:
                                         
                 elif event.type == QUIT:
                     running = False
-                      
+              
+            self.play()        
             time.sleep(0.4)         
 
 if __name__ == "__main__":
