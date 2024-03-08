@@ -28,18 +28,24 @@ class Snake:
         
     def draw(self):
         self.parent_screen.fill((255,255,255))
-        self.parent_screen.blit(self.block,(self.x,self.y))
+        for i in range (self.length):
+            self.parent_screen.blit(self.block,(self.x,self.y))
         pygame.display.flip()
         
     def walk(self):
-        if self.direction == "up":
-            self.y -= 10
-        if self.direction == "down":
-            self.y += 10   
-        if self.direction == "right":
-            self.x += 10        
-        if self.direction == "left":
-            self.x -= 10
+        
+        for i in range(self.length-1,0,-1):
+            self.x[i] = self.x[i-1]
+            self.y[i] = self.y[i-1]
+
+        if self.direction == 'left':
+            self.x[0] -= SIZE
+        if self.direction == 'right':
+            self.x[0] += SIZE
+        if self.direction == 'up':
+            self.y[0] -= SIZE
+        if self.direction == 'down':
+            self.y[0] += SIZE
             
         self.draw()
 
@@ -47,7 +53,7 @@ class Game:
     def __init__(self):
         pygame.init()
         self.surface = pygame.display.set_mode((1000,500))
-        self.snake = Snake(self.surface)
+        self.snake = Snake(self.surface ,2)
         self.snake.draw()
     
     def run(self):
