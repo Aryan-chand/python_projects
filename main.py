@@ -89,7 +89,7 @@ class Game:
         return False
     
     def diplay_score(self):
-        font= pygame.font.SysFont('arial',18)
+        font= pygame.font.SysFont('arial',28)
         score = font.render(f"Score: {self.snake.length}" ,True, (200,200,200))
         self.surface.blit(score,(800,10))
               
