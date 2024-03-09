@@ -38,7 +38,7 @@ class Snake:
         self.direction ="down"
         
     def draw(self):
-        self.parent_screen.fill((124, 252, 0))
+        self.parent_screen.fill((104 , 166 ,67))
         for i in range (self.length):
             self.parent_screen.blit(self.block,(self.x[i],self.y[i]))
         pygame.display.flip()
@@ -68,11 +68,23 @@ class Game:
         self.snake.draw()
         self.apple = Apple(self.surface)
         self.apple.draw()
-        
+    
+    def is_collision(self , x1 ,y1 , x2, y2):
+        if x1 >= x2 and x1 <= x2 + Size:
+            if y1 >= y2 and y1 <= y2 + Size:
+                return True
+        return False
+    
+    
     def play(self):
         self.snake.walk()
         self.apple.draw()
-    
+        
+        if self.is_collision(self.snake.x[0],self.snake.y[0],self.apple.x,self.apple.y):
+            print("Collision occoured")
+        
+        
+        
     def run(self):
         running= True 
     
