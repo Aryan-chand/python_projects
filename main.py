@@ -90,7 +90,7 @@ class Game:
     
     def diplay_score(self):
         font= pygame.font.SysFont('arial',18)
-        score = font.render(f"Score: {self.snake.length}" , True, (200,200,200))
+        score = font.render(f"Score: {self.snake.length}" ,True, (200,200,200))
         
         
         
