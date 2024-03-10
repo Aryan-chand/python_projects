@@ -74,8 +74,7 @@ class Snake:
                         
         self.draw()
 
-class Game:   
-    
+class Game:      
     def __init__(self):
         pygame.init()
         pygame.mixer.init()
