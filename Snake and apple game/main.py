@@ -9,7 +9,7 @@ bgcolor = (104 , 166 ,67)
 class Apple :
     
     def __init__(self ,parent_screen) -> None:
-        self.image = pygame.image.load("Resource/apple.jpg").convert()
+        self.image = pygame.image.load("Snake and apple game/Resource/apple.jpg").convert()
         self.parent_screen = parent_screen
         self.x = Size * 3
         self.y = Size * 3
@@ -27,7 +27,7 @@ class Snake:
     def __init__(self, parent_screen, length):
         
         self.parent_screen = parent_screen
-        self.block = pygame.image.load("Resource/block.jpg").convert()
+        self.block = pygame.image.load("Snake and apple game/Resource/block.jpg").convert()
         self.direction = "down"
         
         self.length = length
@@ -92,7 +92,7 @@ class Game:
         return False
     
     def play_background(self):
-        pygame.mixer.music.load("Resource/bg_music_1.mp3")
+        pygame.mixer.music.load("Snake and apple game/Resource/bg_music_1.mp3")
         pygame.mixer.music.play()
             
     def diplay_score(self):
@@ -108,7 +108,7 @@ class Game:
         
         #snake collision with apple
         if self.is_collision(self.snake.x[0],self.snake.y[0],self.apple.x,self.apple.y):
-            sound=pygame.mixer.Sound("Resource/ding.mp3")
+            sound=pygame.mixer.Sound("Snake and apple game/Resource/ding.mp3")
             pygame.mixer.Sound.play(sound)
             self.apple.move()
             self.snake.inc_length()
