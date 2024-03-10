@@ -78,6 +78,7 @@ class Game:
     
     def __init__(self):
         pygame.init()
+        pygame.mixer.init()
         self.surface = pygame.display.set_mode((1000,800))
         self.snake = Snake(self.surface ,1)
         self.snake.draw()
@@ -103,6 +104,8 @@ class Game:
         
         #snake collision with apple
         if self.is_collision(self.snake.x[0],self.snake.y[0],self.apple.x,self.apple.y):
+            sound=pygame.mixer.Sound("Resource/ding.mp3")
+            pygame.mixer.Sound.play(sound)
             self.apple.move()
             self.snake.inc_length()
             
