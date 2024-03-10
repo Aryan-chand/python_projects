@@ -79,6 +79,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.mixer.init()
+        self.play_background()
         self.surface = pygame.display.set_mode((1000,800))
         self.snake = Snake(self.surface ,1)
         self.snake.draw()
@@ -91,6 +92,10 @@ class Game:
                 return True
         return False
     
+    def play_background(self):
+        pygame.mixer.music.load("Resource/bg_music_1.mp3")
+        pygame.mixer.music.play()
+            
     def diplay_score(self):
         font= pygame.font.SysFont('arial',28)
         score = font.render(f"Score: {self.snake.length}" ,True, (200,200,200))
