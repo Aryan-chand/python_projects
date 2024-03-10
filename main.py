@@ -117,7 +117,7 @@ class Game:
         line1 = font.render(f"Score: {self.snake.length}",True, (200,200,200))
         self.surface.blit(line1,(200,300)) 
         line2 = font.render("play again ",True, (200,200,200))
-        self.surface.blit(line2 ,(200,350)) 
+        self.surface.blit(line2 ,(200,400)) 
         pygame.display.flip()
     
     def reset(self):
