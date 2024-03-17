@@ -17,7 +17,8 @@ class Apple :
     def draw(self):
         self.parent_screen.blit(self.image,(self.x,self.y))
         pygame.display.flip()
-        
+    
+    # random place for apple    
     def move(self):
         self.x = random.randint(1,24)*Size
         self.y = random.randint(1,19)*Size
