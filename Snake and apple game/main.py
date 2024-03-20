@@ -135,7 +135,8 @@ class Game:
     def run(self):
         running= True 
         pause = False
-    
+
+        # movement using keys
         while running:
             for event in pygame.event.get():
             
