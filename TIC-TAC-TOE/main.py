@@ -159,5 +159,5 @@ while True:
         if x.lower() == 'y' or x.lower() =='yes':
             StartTheGame()        
         else:
-            print("GLHF")
+            print("Thanks for playing")
             break
