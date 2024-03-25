@@ -107,3 +107,11 @@ def CleanScreen():
     
     else:
          os.system('cls')
+
+def TieGame():
+    
+    if isBoardFull(board) and (not((IsWinner(board, 'X')) or (IsWinner(board, 'O')))):
+        return True
+    else:
+        return False
+
