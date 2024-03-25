@@ -115,3 +115,49 @@ def TieGame():
     else:
         return False
 
+scorecount = 0
+def GamePlay():
+    global scorecount
+    if scorecount == 0:
+        print("Welcome to the game!")
+    if scorecount < 0:
+        scorecount = 0
+    printBoard(board)
+
+    while not(isBoardFull(board)):
+        
+        if not(IsWinner(board, 'O')) :
+            playerMove()
+            CleanScreen()
+            printBoard(board)
+        else:
+            scorecount -= 1
+            print(f"Sorry, you lose 😢! Your Score is {scorecount}")
+            break
+
+        if (not(IsWinner(board, 'X'))) :
+            move = computerMove()
+            if move == 0:
+                print(" ")
+            elif not(isBoardFull(board)):
+                insertLetter('O', move)
+                print('computer placed an o on position', move, ':')
+                CleanScreen()
+                printBoard(board)
+        else:
+            scorecount += 1
+            print(f"You win! Your Score is {scorecount}")
+            break     
+while True:
+    if FirstRun:
+        FirstRun=False
+        StartTheGame()
+    else :
+        if TieGame():
+            print("It's a tie!")
+        x = input("Do you want to play again? (y/n)")
+        if x.lower() == 'y' or x.lower() =='yes':
+            StartTheGame()        
+        else:
+            print("GLHF")
+            break
