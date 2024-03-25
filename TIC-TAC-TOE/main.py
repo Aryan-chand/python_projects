@@ -86,3 +86,24 @@ def computerMove():
     if len(edgesOpen) > 0:
         move = selectRandom(edgesOpen)
         return move
+
+def selectRandom(li):
+    import random
+    ln = len(li)
+    r = random.randrange(0, ln)
+    return li[r]
+
+def StartTheGame():
+    global board
+    board = [' ' for x in range(10)]
+    CleanScreen()
+    print('-------------------------')
+    GamePlay()
+
+def CleanScreen():
+    
+    if(os.name == 'posix'):
+         os.system('clear') 
+    
+    else:
+         os.system('cls')
