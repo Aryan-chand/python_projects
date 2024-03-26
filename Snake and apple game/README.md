@@ -12,6 +12,6 @@ You also need to install <i>pip install pygame</i> in the terminal to run the pr
 
 ## 🌟 How to run
 
-Running the script is really simple! Just open a terminal in the folder where your script is located and run the following command:
+Running the script is really simple! Just open a terminal in the folder where your script is located and run the program :
 
 ![](game_preview.gif)
