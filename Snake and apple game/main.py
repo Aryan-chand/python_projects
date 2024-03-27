@@ -172,6 +172,7 @@ class Game:
                 
             time.sleep(0.5)         
 
+#main function
 if __name__ == "__main__":
     game = Game()
     game.run()
